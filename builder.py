@@ -173,8 +173,8 @@ def build_and_evaluate(X, y, classifier, stopwords, outpath=None, verbose=True):
     if verbose: print("Classification Report:\n")
 
     y_pred = model.predict(X_test)
-    print(clsr(y_test, y_pred, target_names=labels.classes_))
-    print(accuracy_score(y_test, y_pred))
+    if verbose: print(clsr(y_test, y_pred, target_names=labels.classes_))
+    if verbose: print(accuracy_score(y_test, y_pred))
 
     if verbose: print("Building complete model and saving ...")
     model, secs = build(classifier, X, y)
@@ -242,14 +242,14 @@ def show_most_informative_features(model, text=None, n=20):
     return "\n".join(output)
 
 
-# In[11]:
-
-
-if __name__ == "__main__":
+def construct(qna_file, isCsv=True):
     PATH = "model.pkl"
     
     #Load data
-    data = pd.read_csv('qna.csv', encoding = "ISO-8859-1", header=None)
+    if isCsv:
+        data = pd.read_csv(qna_file, encoding = "ISO-8859-1", header=None)
+    else:
+        data = qna_file
     data.columns = ['question','answer']
     X,y = data['question'],data['answer']
     
@@ -259,10 +259,9 @@ if __name__ == "__main__":
     # sr.extend(newStopWords)
     
     #Build model
-    model,secs = build_and_evaluate(X,y,MultinomialNB(), sr, outpath=PATH)
+    model,secs = build_and_evaluate(X,y,MultinomialNB(), sr, outpath=PATH, verbose=False)
 
+    # print(show_most_informative_features(model))
 
-    print(show_most_informative_features(model))
-
-
-# In[ ]:
+if __name__ == "__main__":
+    construct('singtel_qna.csv')
