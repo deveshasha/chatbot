@@ -30,7 +30,9 @@ selenium_urls = ['https://www.singtel.com/personal/support/account-billing',
         'https://www.singtel.com/personal/support/singtel-tv',
         'https://www.singtel.com/personal/support/telephony',
         'https://www.singtel.com/personal/support/online-purchases',
-        'https://www.singtel.com/personal/support/lifestyle']
+        'https://www.singtel.com/personal/support/lifestyle/connectedthings',
+        'https://www.singtel.com/personal/support/lifestyle/Oaxis',
+        'https://www.singtel.com/personal/support/lifestyle/trackimo']
 
 for url in selenium_urls:
 	driver.get(url)
@@ -40,6 +42,19 @@ for url in selenium_urls:
 	for q, a in zip(questions_soup, answers_soup):
 		questions.append(q.text)
 		answers.append(a.text)
+
+selenium_urls_2 = ['https://www.singtel.com/personal/support/broadband/troubleshoot',
+                   'https://www.singtel.com/personal/support/telephony/troubleshoot',
+                   'https://www.singtel.com/personal/support/singtel-tv/troubleshoot']
+for url in selenium_urls_2:
+    driver.get(url)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+    for text in soup.find_all('div', class_=' description-text body-copy-text v-none-top'):
+        for a in text.find_all('a', href=True):
+            questions.append(a.text)
+            answers.append('Please follow the instructions given here: https://www.singtel.com' + a['href'])
+		
+
 driver.close()
 
 with open('qna.csv','w', encoding='utf-8') as file:
