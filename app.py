@@ -37,8 +37,8 @@ api.add_resource(Helper, '/question/<params>') # Help Route
 
 if __name__ == '__main__':
      # For actual
-     # app.run(host="0.0.0.0", port=80)
-    app.run()
+    app.run(host="0.0.0.0", port=80)
+    # app.run()
 
 
 # Example:

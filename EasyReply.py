@@ -1,5 +1,3 @@
-from scrapers import facebook_scraper, company_scraper
-import builder
 from sklearn import metrics
 
 import gensim
