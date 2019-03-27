@@ -41,8 +41,16 @@ def scrape(filename, soup_links, selenium_links, *selenium_links_troubleshoot):
         
     driver.close()
 
+    with open(filename,'w', encoding='utf-8') as file:
+        for question,answer in zip(questions,answers):
+            question = question.replace(',','').strip()
+            answer = answer.replace(',','').strip()
+            file.write(question.replace('\n',' ') + ',' + answer.replace('\n',' '))
+            file.write('\n')
+    file.close()
+
     output = pd.DataFrame({'questions':questions,'answers':answers})
-    output.to_csv(filename,index=False)
+    # output.to_csv(filename,index=False)
     print('Saved Q&A to',filename)
     return output
 
