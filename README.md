@@ -69,8 +69,7 @@ Insert the facebook url in facebook_scraper.py. The facebook posts will be saved
 
 ```python
 if __name__ == "__main__":
-	#Change here
-	url = 'https://www.facebook.com/company/posts_to_page/'
+	url = 'https://www.facebook.com/<company fb user>/posts_to_page/'
 	loopCount = 2 # <- Change loop count if you want more posts to be scraped
 scrapePost(url, loopCount)
 ```
