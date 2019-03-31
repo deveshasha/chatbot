@@ -11,7 +11,7 @@ These instructions will get you setup with the required tools and packages to ru
 
 Python 3.x Packages
 
-```
+```python
 nltk
 pandas
 sklearn
@@ -25,7 +25,7 @@ selenium
 
 Additional Files
 
-```
+```bash
 # Chrome Driver
 chromedriver.exe (or any preferred driver)
 
@@ -44,13 +44,13 @@ There are 3 main steps required to get the chatbot up and running:
 
 Ensure that chromedriver.exe is in the same directory as company_scraper.py. Edit company_scraper.py as such:
 
-```
+```python
 if __name__ == '__main__':
   soup_urls = ['link here']
   scrape('output_csv_filename.csv', soup_urls')
 ```
 Run the script and a csv file containing the Questions and Answers should be saved in the same directory.
-```
+```python
 python company_scraper.py
 ```
 
@@ -58,7 +58,7 @@ python company_scraper.py
 
 Ensure that you have configured config_fb_cred.json to contain your login credentials.
 
-```
+```json
 {
 	"email":"Facebook Account Email",
 	"password":"Facebook Account PW"
@@ -67,7 +67,7 @@ Ensure that you have configured config_fb_cred.json to contain your login creden
 
 Insert the facebook url in facebook_scraper.py. The facebook posts will be saved as [company]_fb_questions.csv.
 
-```
+```python
 if __name__ == "__main__":
 	#Change here
 	url = 'https://www.facebook.com/company/posts_to_page/'
@@ -89,7 +89,7 @@ er = EasyReply(faq_qns)
 
 Next, if running the app on localhost, change to the following. Otherwise for production, leave it.
 
-```
+```python
 if __name__ == '__main__':
      # For actual
      # app.run(host="0.0.0.0")
