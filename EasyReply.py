@@ -64,9 +64,15 @@ class EasyReply():
         text_qn = PhraseVector(text)
         qn_df['scoring'] = [text_qn.CosineSimilarity(PhraseVector(qn).vector) for qn in qn_df['FAQ Question']]
         max_row = qn_df.sort_values(by=['scoring'], ascending=False).iloc[0,:]
+        score = max_row['scoring']
+        reply = max_row['FAQ Answer']
         if question:
-            return max_row['FAQ Question']
-        return max_row['FAQ Answer']
+            reply = max_row['FAQ Question']
+
+        if score > 0.49:
+            return reply, score
+        else:
+            return 'Thank you for contacting us. A live agent will get back to you shortly.', 0
         
         
         

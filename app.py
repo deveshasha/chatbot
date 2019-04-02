@@ -26,8 +26,8 @@ def jsonify(status=200, indent=4, sort_keys=False, **kwargs):
 class Helper(Resource):
     def get(self, params):
         qn = params
-        result = er.answer(qn)
-        output_dict = {"Question": qn, "Answer": result}
+        result, score = er.answer(qn)
+        output_dict = {"Question": qn, "Answer": result, "Score": str(score)}
         #### OUTPUT DICT ####
         return jsonify(**output_dict)
         
@@ -37,9 +37,5 @@ api.add_resource(Helper, '/question/<params>') # Help Route
 
 if __name__ == '__main__':
      # For actual
-    app.run(host="0.0.0.0")
-    # app.run()
-
-
-# Example:
-# http://18.222.104.191/api/brand=Coca-cola&company=Coca-cola&category=None&competitors=None&country=us&startYear=2016&endYear=2017&API_Key=bapentagons
+    # app.run(host="0.0.0.0")
+    app.run()
