@@ -97,6 +97,10 @@ if __name__ == '__main__':
 
 Now, you can go to your browser and type the following: localhost/question/&lt;insert your question here&gt;. The app will return a JSON response with the answer from FAQ.
 
+## Model Exploratory Process
+
+Code developed during exploratory process to compare models can be found under "Model Exploratory.ipynb" / "Model Exploratory.html".
+
 ## Deployment
 
 Connect your bot, e.g. DialogFlow, to send a GET request to &lt;your machine ip address&gt;/question/&lt;user message&gt; and return the answer section of the JSON response.
