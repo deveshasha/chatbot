@@ -95,11 +95,11 @@ if __name__ == '__main__':
     app.run()
 ```
 
-Now, you can go to your browser and type the following: localhost/question/<insert your question here>. The app will return a JSON response with the answer from FAQ.
+Now, you can go to your browser and type the following: localhost/question/&lt;insert your question here&gt;. The app will return a JSON response with the answer from FAQ.
 
 ## Deployment
 
-Connect your bot, e.g. DialogFlow, to send a GET request to <your machine ip address>/question/<user message> and return the answer section of the JSON response.
+Connect your bot, e.g. DialogFlow, to send a GET request to &lt;your machine ip address&gt;/question/&lt;user message&gt; and return the answer section of the JSON response.
 
 ## Acknowledgments
 
