@@ -99,7 +99,7 @@ Now, you can go to your browser and type the following: localhost/question/&lt;i
 
 ## Model Exploratory Process
 
-Code developed during exploratory process to compare models can be found under "Model Exploratory.ipynb" / "Model Exploratory.html".
+Code developed during exploratory process to compare models can be found under "Model Exploration.ipynb" / "Model Exploration.html".
 
 ## Deployment
 
