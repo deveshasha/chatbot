@@ -78,7 +78,7 @@ scrapePost(url, loopCount)
 
 Edit app.py to import the csvs you have just scraped.
 
-```
+```python
 er = EasyReply
 train_data = pd.read_csv('singtel_qna.csv',header=None) #<- Change this to your csv file name
 train_data.columns = ['Question','Answer']
@@ -99,7 +99,7 @@ Now, you can go to your browser and type the following: localhost/question/&lt;i
 
 ## Model Exploratory Process
 
-Code developed during exploratory process to compare models can be found under "Model Exploration.ipynb" / "Model Exploration.html".
+Code developed during exploratory process to compare models can be found under `"Model Exploration.ipynb"` / `"Model Exploration.html"`.
 
 ## Deployment
 
