@@ -9,7 +9,7 @@ These instructions will get you setup with the required tools and packages to ru
 
 ### Prerequisites
 
-Python 3.x Packages
+Python 3.x Packages (refer to `requirements.txt` for full packages)
 
 ```python
 nltk
