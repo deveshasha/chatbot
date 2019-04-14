@@ -76,7 +76,7 @@ scrapePost(url, loopCount)
 
 **Step 3: Building the Model**
 
-Edit app.py to import the csvs you have just scraped.
+Edit app.py to import the CSVs you have just scraped.
 
 ```python
 er = EasyReply
