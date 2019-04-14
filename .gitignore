@@ -1,1 +1,3 @@
-old/
+old_code/
+*.bin
+*.pyc
