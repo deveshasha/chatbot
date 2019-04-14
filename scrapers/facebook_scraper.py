@@ -127,6 +127,6 @@ def scrapePost(fbpage, loopCount):
 if __name__ == "__main__":
 	#Change here
 	url = 'https://www.facebook.com/singtel/posts_to_page/'
-	loopCount = 2
+	loopCount = 10
 	scrapePost(url, loopCount)
 
