@@ -15,7 +15,7 @@ flask==1.0.2
 gensim==3.7.2
 idna==2.8
 itsdangerous==1.1.0
-jinja2==2.10.1
+jinja2==2.11.3
 jmespath==0.9.4
 markupsafe==1.1.1
 nltk==3.4
